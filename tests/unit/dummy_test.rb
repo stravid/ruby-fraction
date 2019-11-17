@@ -7,4 +7,8 @@ class DummyTitle < UnitTest
   def test_equality
     assert_equal Fraction.new('0'), Fraction.new('0')
   end
+
+  def test_addition_of_zero
+    assert_equal Fraction.new('0') + Fraction.new('0'), Fraction.new('0')
+  end
 end

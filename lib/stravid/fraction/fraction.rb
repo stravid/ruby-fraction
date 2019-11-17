@@ -4,6 +4,11 @@ module Stravid
       def initialize(value)
 
       end
+
+      def +(other)
+        new(other)
+      end
+
       def ==(other)
         true
       end

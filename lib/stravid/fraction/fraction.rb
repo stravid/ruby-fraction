@@ -6,7 +6,7 @@ module Stravid
       end
 
       def +(other)
-        new(other)
+        Fraction.new(other)
       end
 
       def ==(other)

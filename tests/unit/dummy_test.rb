@@ -2,9 +2,9 @@ require_relative '../unit_helper'
 require 'stravid/fraction'
 
 class DummyTitle < UnitTest
-  include Stravid
+  include Stravid::Fraction
 
-  def test_dummy
-    assert_equal Fraction.new('1/2') + Fraction.new('1/2'), Fraction.new('1/1')
+  def test_equality
+    assert_equal Fraction.new('0'), Fraction.new('0')
   end
 end

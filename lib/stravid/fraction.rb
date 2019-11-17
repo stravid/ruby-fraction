@@ -1,4 +1,5 @@
-require "stravid/fraction/version"
+require 'stravid/fraction/version'
+require 'stravid/fraction/fraction'
 
 module Stravid
   module Fraction

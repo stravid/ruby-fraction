@@ -2,17 +2,20 @@ module Stravid
   module Fraction
     class Fraction
       def initialize(value)
-
+        @value = value
       end
 
       def +(other)
-        Fraction.new(other)
+        other
       end
 
       def ==(other)
-        true
+        other.value == value
       end
       alias_method :eql?, :==
+
+      protected
+      attr_reader :value
     end
   end
 end

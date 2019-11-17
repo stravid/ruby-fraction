@@ -1,3 +1,4 @@
 source 'https://rubygems.org'
 
-gem 'minitest', '5.13.0'
+# Specify your gem's dependencies in stravid-fraction.gemspec
+gemspec

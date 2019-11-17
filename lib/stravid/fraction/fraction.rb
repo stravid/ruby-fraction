@@ -6,7 +6,7 @@ module Stravid
       end
 
       def +(other)
-        other
+        self
       end
 
       def ==(other)

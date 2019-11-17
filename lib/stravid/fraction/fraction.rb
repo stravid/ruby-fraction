@@ -6,7 +6,8 @@ module Stravid
       end
 
       def +(other)
-        self
+        new_value = value.to_i + other.value.to_i
+        Fraction.new(new_value.to_s)
       end
 
       def ==(other)

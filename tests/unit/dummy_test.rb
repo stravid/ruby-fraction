@@ -16,4 +16,8 @@ class DummyTitle < UnitTest
   def test_addition_of_one_and_zero
     assert_equal Fraction.new('1') + Fraction.new('0'), Fraction.new('1')
   end
+
+  def test_addition_of_one_and_one
+    assert_equal Fraction.new('1') + Fraction.new('1'), Fraction.new('2')
+  end
 end

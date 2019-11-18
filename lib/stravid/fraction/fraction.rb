@@ -29,7 +29,7 @@ module Stravid
       end
 
       def ==(other)
-        other.numerator == numerator
+        other.numerator == numerator && other.denominator == denominator
       end
       alias_method :eql?, :==
 

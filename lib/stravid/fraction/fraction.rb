@@ -2,44 +2,44 @@ module Stravid
   module Fraction
     class Fraction
       def initialize(value)
-        @top, @bottom = value.split('/')
+        @numerator, @denominator = value.split('/')
 
-        if @bottom.nil?
-          @bottom = 1
+        if @denominator.nil?
+          @denominator = 1
         end
 
-        @top = @top.to_i
-        @bottom = @bottom.to_i
+        @numerator = @numerator.to_i
+        @denominator = @denominator.to_i
       end
 
       def +(other)
-        a_bottom = self.bottom
-        b_bottom = other.bottom
-        a_top = self.top
-        b_top = other.top
+        a_denominator = self.denominator
+        b_denominator = other.denominator
+        a_numerator = self.numerator
+        b_numerator = other.numerator
 
-        if a_bottom != b_bottom
-          actual_bottom = a_bottom * b_bottom
-          a_top = a_top * b_bottom
-          b_top = b_top * a_bottom
+        if a_denominator != b_denominator
+          actual_denominator = a_denominator * b_denominator
+          a_numerator = a_numerator * b_denominator
+          b_numerator = b_numerator * a_denominator
         else
-          actual_bottom = a_bottom
+          actual_denominator = a_denominator
         end
 
-        new_top = a_top + b_top
-        new_bottom = actual_bottom / (new_top.gcd(actual_bottom))
-        new_top = new_top / (new_top.gcd(actual_bottom))
+        new_numerator = a_numerator + b_numerator
+        new_denominator = actual_denominator / (new_numerator.gcd(actual_denominator))
+        new_numerator = new_numerator / (new_numerator.gcd(actual_denominator))
 
-        Fraction.new("#{new_top}/#{new_bottom}")
+        Fraction.new("#{new_numerator}/#{new_denominator}")
       end
 
       def ==(other)
-        other.top == top
+        other.numerator == numerator
       end
       alias_method :eql?, :==
 
       protected
-      attr_reader :top, :bottom
+      attr_reader :numerator, :denominator
     end
   end
 end

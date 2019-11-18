@@ -1,0 +1,5 @@
+2019-11-18 : 0.1.0
+* Add ability to add fractions.
+
+2019-11-17 : 0.0.1
+* Setup gem.

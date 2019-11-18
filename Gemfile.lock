@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    stravid-fraction (0.0.1)
+    stravid-fraction (0.1.0)
 
 GEM
   remote: https://rubygems.org/

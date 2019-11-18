@@ -2,14 +2,9 @@ module Stravid
   module Fraction
     class Fraction
       def initialize(value)
-        @numerator, @denominator = value.split('/')
-
-        if @denominator.nil?
-          @denominator = 1
-        end
-
-        @numerator = @numerator.to_i
-        @denominator = @denominator.to_i
+        parts = value.split('/')
+        @numerator = parts[0].to_i
+        @denominator = (parts[1] || 1).to_i
       end
 
       def +(other)

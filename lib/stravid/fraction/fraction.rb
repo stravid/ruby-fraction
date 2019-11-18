@@ -7,13 +7,16 @@ module Stravid
         if @bottom.nil?
           @bottom = 1
         end
+
+        @top = @top.to_i
+        @bottom = @bottom.to_i
       end
 
       def +(other)
-        a_bottom = self.bottom.to_i
-        b_bottom = other.bottom.to_i
-        a_top = self.top.to_i
-        b_top = other.top.to_i
+        a_bottom = self.bottom
+        b_bottom = other.bottom
+        a_top = self.top
+        b_top = other.top
 
         new_top = a_top + b_top
         new_bottom = a_bottom / (new_top.gcd(a_bottom))

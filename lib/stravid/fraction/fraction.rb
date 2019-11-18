@@ -18,9 +18,17 @@ module Stravid
         a_top = self.top
         b_top = other.top
 
+        if a_bottom != b_bottom
+          actual_bottom = a_bottom * b_bottom
+          a_top = a_top * b_bottom
+          b_top = b_top * a_bottom
+        else
+          actual_bottom = a_bottom
+        end
+
         new_top = a_top + b_top
-        new_bottom = a_bottom / (new_top.gcd(a_bottom))
-        new_top = new_top / (new_top.gcd(a_bottom))
+        new_bottom = actual_bottom / (new_top.gcd(actual_bottom))
+        new_top = new_top / (new_top.gcd(actual_bottom))
 
         Fraction.new("#{new_top}/#{new_bottom}")
       end

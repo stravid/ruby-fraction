@@ -28,4 +28,8 @@ class DummyTitle < UnitTest
   def test_addition_of_one_sixth_and_one_sixth
     assert_equal Fraction.new('1/6') + Fraction.new('1/6'), Fraction.new('1/3')
   end
+
+  def test_addition_of_one_sixth_and_one_sixth
+    assert_equal Fraction.new('7/3') + Fraction.new('4/5'), Fraction.new('47/15')
+  end
 end
